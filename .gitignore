@@ -1,0 +1,4 @@
+# arquivo que impede que seja comentado
+
+venv
+.idea
