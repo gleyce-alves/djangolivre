@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cadastro',
     'rest_framework',
+    'conta',
 ]
 
 MIDDLEWARE = [
