@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('agencia', models.CharField(max_length=5)),
-                ('numero', models.CharField(max_length=10)),
+                ('numero_conta', models.CharField(max_length=10)),
                 ('saldo', models.CharField(max_length=20)),
             ],
         ),
