@@ -6,4 +6,4 @@ from .models import Cadastro
 class CadastroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cadastro
-        fields = ['id', 'nome_completo', 'cpf', 'rg', 'endereço', 'telefone_de_contato', 'email']
+        fields = ['id', 'nome_completo', 'cpf', 'rg', 'endereco', 'telefone_de_contato', 'email']
