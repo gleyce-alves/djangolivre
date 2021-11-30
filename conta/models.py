@@ -1,14 +1,18 @@
 from uuid import uuid4
 
 from django.db import models
-import random
+
+from cadastro.models import Cadastro
+
 
 class Conta(models.Model):
-    agencia = models.CharField(max_length=5)
+    cadastro = models.ForeignKey(
+        Cadastro,
+        on_delete=models.CASCADE
+    )
+    agencia = models.CharField(max_length=5,default=12345)
     numero_conta = models.UUIDField(default=uuid4)
-    saldo = models.CharField(max_length=20)
-    saldo_inicial = 500.00
-
+    saldo_inicial = models.PositiveIntegerField(default=500)
 
     def __str__(self) -> int():
         return self.numero_conta
