@@ -9,5 +9,5 @@ class Cadastro(models.Model):
     telefone_de_contato = models.CharField(max_length=11)
     email = models.EmailField(max_length=50, verbose_name="email")
 
-    def __str__(self) -> str:
-        return self.nome_completo
+    # def __str__(self) -> str:
+    #   return self.name
