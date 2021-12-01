@@ -1,7 +1,6 @@
 from django.db import models
 from cadastro.models import Cadastro
 from conta.models import Conta
-#import datetime
 
 
 # Create your models here.

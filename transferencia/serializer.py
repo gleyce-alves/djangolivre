@@ -6,4 +6,4 @@ class TransferenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transacao
         fields = ['id', 'entrada_nome',
-                  'numero_conta_destino', 'alor_para_transferencia']
+                  'numero_conta_destino', 'valor_para_transferencia']
