@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "ab3e0e0e-103f-492f-bfc2-84205370ac3b",
+		"name": "djangolivre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cadastro",
+			"item": [
+				{
+					"name": "Cadastro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome_completo\": \"abcdef\",\r\n    \"cpf\": \"abcdef\",\r\n    \"rg\": \"555555555555555555\",\r\n    \"endereco\": \"aa\",\r\n    \"telefone_de_contato\": \"hhhhhhh\",\r\n    \"email\": \"aaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/cadastro/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"cadastro",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "cadastro inválido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_completo\": \"abcdef\",\r\n    \"cpf\": \"abcdef\",\r\n    \"rg\": \"555555555555555555\",\r\n    \"endereco\": \"aa\",\r\n    \"telefone_de_contato\": \"hhhhhhh\",\r\n    \"email\": \"aaaa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/cadastro/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"cadastro",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 02 Dec 2021 03:12:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "234"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cpf\": [\n        \"O CPF deve conter apenas números\"\n    ],\n    \"rg\": [\n        \"Certifique-se de que este campo não tenha mais de 9 caracteres.\"\n    ],\n    \"telefone_de_contato\": [\n        \"O telefone deve conter apenas números\"\n    ],\n    \"email\": [\n        \"Insira um endereço de email válido.\"\n    ]\n}"
+						},
+						{
+							"name": "cadastro válido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome_completo\": \"Alana Carla Teixeira\",\r\n    \"cpf\": \"15954109451\",\r\n    \"rg\": \"293368284\",\r\n    \"endereco\": \"Rua Raimundo Aprígio de Menezes\",\r\n    \"telefone_de_contato\": \"8536173769\",\r\n    \"email\": \"alanacarlateixeira@accor.com.br\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/cadastro/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"cadastro",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 02 Dec 2021 03:18:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome_completo\": \"Alana Carla Teixeira\",\n    \"cpf\": \"15954109451\",\n    \"rg\": \"293368284\",\n    \"endereco\": \"Rua Raimundo Aprígio de Menezes\",\n    \"telefone_de_contato\": \"8536173769\",\n    \"email\": \"alanacarlateixeira@accor.com.br\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
