@@ -19,3 +19,6 @@ class Conta(models.Model):
     numero_conta = models.IntegerField(
         unique=True, null=False, default=num_aleatorio)
     saldo = models.PositiveIntegerField(default=500)
+
+    def __str__(self) -> str:
+        return self.cadastro

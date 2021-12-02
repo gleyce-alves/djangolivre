@@ -19,8 +19,8 @@ class FormularioTransacao (forms.ModelForm):
     class Meta:
         model = models.Transacao
         fields = [
-            "entrada_nome",
-            "numero_conta_destino",
-            "valor_para_transferencia",
-            "cadastro"
+            "remetente",
+            "destinatario",
+            "data",
+            "valor_transferido
         ]
