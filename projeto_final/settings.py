@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'cadastro',
     'rest_framework',
     'conta',
+    'transferencia'
 ]
 
 MIDDLEWARE = [
