@@ -1,4 +1,4 @@
-import random
+import uuid
 
 from django.db import models
 
@@ -6,7 +6,7 @@ from cadastro.models import Cadastro
 
 
 def num_aleatorio():
-    return random.randint(100000, 999999)
+    return str(int(uuid.uuid4()))[:10]
 
 
 class Conta(models.Model):
@@ -18,3 +18,6 @@ class Conta(models.Model):
     numero_conta = models.IntegerField(
         unique=True, null=False, default=num_aleatorio)
     saldo = models.PositiveIntegerField(default=500)
+
+    def __str__(self) -> str:
+        return self.cadastro
