@@ -1,13 +1,18 @@
 from django.db import models
+from django.db.models.fields import Field
 from cadastro.models import Cadastro
 from conta.models import Conta
+from django.db.models import Model
+from datetime import datetime
 
-
-# Create your models here.
 
 class Transacao(models.Model):
-    cadastro = models.OneToOneField(
-        Cadastro, on_delete=models.CASCADE)
-    entrada_nome = models.CharField(Cadastro, max_length=150, default=None)
-    numero_conta_destino = models.IntegerField()
-    valor_para_transferencia = models.IntegerField()
+    remetente = models.ForeignKey(
+        Conta, on_delete=models.DO_NOTHING, related_name='remetente')
+    destinatario = models.ForeignKey(
+        Conta,  on_delete=models.DO_NOTHING, related_name='destinatario')
+    data = models.DateTimeField(auto_now=True)
+    valor_transferido = models.PositiveIntegerField()
+
+    def __str__(self) -> str:
+        return self.remetente.cadastro.nome_completo
