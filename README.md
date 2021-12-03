@@ -1,4 +1,4 @@
-<h1>Bumblebee Extension Pack</h1>
+<h1>Django Livre</h1>
 
 <p>
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Danieli-Bauer/djangolivre.svg">
