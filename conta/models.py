@@ -20,4 +20,4 @@ class Conta(models.Model):
     saldo = models.PositiveIntegerField(default=500)
 
     def __str__(self) -> str:
-        return self.cadastro
+        return self.cadastro.nome_completo
