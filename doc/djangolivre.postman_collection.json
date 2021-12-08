@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ab3e0e0e-103f-492f-bfc2-84205370ac3b",
-		"name": "djangolivre",
+		"_postman_id": "e9dbb6f4-23f5-46f4-b35a-86123aff700d",
+		"name": "Django",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -9,13 +9,99 @@
 			"name": "Cadastro",
 			"item": [
 				{
-					"name": "Cadastro",
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/cadastro/",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"cadastro",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Clientes do banco DjangoLivre",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/cadastro/",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"cadastro",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 03 Dec 2021 17:41:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1261"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nome_completo\": \"Alana Carla Teixeira\",\n        \"cpf\": \"15954109451\",\n        \"rg\": \"293368284\",\n        \"endereco\": \"Rua Raimundo Aprígio de Menezes\",\n        \"telefone_de_contato\": \"8536173769\",\n        \"email\": \"alanacarlateixeira@accor.com.br\"\n    },\n    {\n        \"id\": 2,\n        \"nome_completo\": \"Julio Renato Duarte\",\n        \"cpf\": \"58460301141\",\n        \"rg\": \"294924486\",\n        \"endereco\": \"Rua N\",\n        \"telefone_de_contato\": \"9129133507\",\n        \"email\": \"juliorenatoduarte-98@lta-am.com.br\"\n    },\n    {\n        \"id\": 3,\n        \"nome_completo\": \"Flávia Regina Louise Oliveira\",\n        \"cpf\": \"60244455392\",\n        \"rg\": \"113014946\",\n        \"endereco\": \"Rua Ana de Lourdes Pereira da Costa\",\n        \"telefone_de_contato\": \"3137576287\",\n        \"email\": \"ssebastiaosamueldasneves@lexos.com.br\"\n    },\n    {\n        \"id\": 4,\n        \"nome_completo\": \"Isabelle Luiza Gonçalves\",\n        \"cpf\": \"54678879714\",\n        \"rg\": \"291278504\",\n        \"endereco\": \"Rua Castanheiras\",\n        \"telefone_de_contato\": \"6928513740\",\n        \"email\": \"iisabelleluizagoncalves@cbsdobrasil.com.br\"\n    },\n    {\n        \"id\": 5,\n        \"nome_completo\": \"Rafael Leandro Souza\",\n        \"cpf\": \"02069213650\",\n        \"rg\": \"193908359\",\n        \"endereco\": \"Rua José Parreira da Silva\",\n        \"telefone_de_contato\": \"3435403932\",\n        \"email\": \"rafaelleandrosouza@focusdm.com.br\"\n    },\n    {\n        \"id\": 6,\n        \"nome_completo\": \"Alexandre César Miguel Ramos\",\n        \"cpf\": \"43696089028\",\n        \"rg\": \"193908359\",\n        \"endereco\": \"3ª Travessa Novo Paraíso\",\n        \"telefone_de_contato\": \"7135706900\",\n        \"email\": \"alexandrecesarmiguelramos_@casabellavidros.com.br\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Criar",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome_completo\": \"abcdef\",\r\n    \"cpf\": \"abcdef\",\r\n    \"rg\": \"555555555555555555\",\r\n    \"endereco\": \"aa\",\r\n    \"telefone_de_contato\": \"hhhhhhh\",\r\n    \"email\": \"aaaa\"\r\n}",
+							"raw": "{\n    \"nome_completo\": \"{{$randomFullName}}\",\n    \"cpf\": \"\",\n    \"rg\": \"\",\n    \"endereco\": \"{{$randomStreetAddress}}\",\n    \"telefone_de_contato\": \"\",\n    \"email\": \"{{$randomEmail}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,15 +109,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/cadastro/",
-							"protocol": "http",
+							"raw": "{{API}}/cadastro/",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{API}}"
 							],
-							"port": "8000",
 							"path": [
 								"cadastro",
 								""
@@ -189,7 +270,275 @@
 						}
 					]
 				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
+		},
+		{
+			"name": "Conta",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/conta/",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"conta",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Contas dos clientes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/conta/",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"conta",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 03 Dec 2021 17:59:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "471"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 1041383194,\n        \"saldo\": 203,\n        \"cadastro\": 1\n    },\n    {\n        \"id\": 2,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 2962716646,\n        \"saldo\": 485,\n        \"cadastro\": 2\n    },\n    {\n        \"id\": 3,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 1871408492,\n        \"saldo\": 2500,\n        \"cadastro\": 3\n    },\n    {\n        \"id\": 4,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 2673235856,\n        \"saldo\": 5020,\n        \"cadastro\": 4\n    },\n    {\n        \"id\": 5,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 2739558050,\n        \"saldo\": 800,\n        \"cadastro\": 5\n    },\n    {\n        \"id\": 6,\n        \"agencia\": \"12345\",\n        \"numero_conta\": 2177202298,\n        \"saldo\": 960,\n        \"cadastro\": 6\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"saldo\": 0,\n    \"cadastro\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/conta/",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"conta",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transferencia",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API}}/transferencia/",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"transferencia",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Histórico de transações",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API}}/transferencia/",
+									"host": [
+										"{{API}}"
+									],
+									"path": [
+										"transferencia",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 03 Dec 2021 18:01:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.10.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "938"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 1,\n        \"data\": \"2021-12-02T20:16:36.502163-03:00\"\n    },\n    {\n        \"id\": 2,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 1,\n        \"data\": \"2021-12-02T20:44:05.661036-03:00\"\n    },\n    {\n        \"id\": 3,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 1,\n        \"data\": \"2021-12-02T20:46:47.628444-03:00\"\n    },\n    {\n        \"id\": 4,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 2,\n        \"data\": \"2021-12-02T20:51:58.824158-03:00\"\n    },\n    {\n        \"id\": 5,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 2,\n        \"data\": \"2021-12-02T23:00:53.296652-03:00\"\n    },\n    {\n        \"id\": 6,\n        \"remetente\": 1,\n        \"destinatario\": 2,\n        \"valor_transferido\": 5,\n        \"data\": \"2021-12-02T23:20:25.797311-03:00\"\n    },\n    {\n        \"id\": 7,\n        \"remetente\": 1,\n        \"destinatario\": 1,\n        \"valor_transferido\": 3,\n        \"data\": \"2021-12-02T23:25:08.199604-03:00\"\n    },\n    {\n        \"id\": 8,\n        \"remetente\": 1,\n        \"destinatario\": 1,\n        \"valor_transferido\": 5,\n        \"data\": \"2021-12-02T23:28:54.412291-03:00\"\n    },\n    {\n        \"id\": 9,\n        \"remetente\": 2,\n        \"destinatario\": 4,\n        \"valor_transferido\": 20,\n        \"data\": \"2021-12-03T14:58:21.130041-03:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"remetente\": 0,\n    \"destinatario\": 0,\n    \"valor_transferido\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API}}/transferencia/",
+							"host": [
+								"{{API}}"
+							],
+							"path": [
+								"transferencia",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API",
+			"value": "http://127.0.0.1:8000"
 		}
 	]
 }
